@@ -1,4 +1,4 @@
-กําหนดให้ใช้ Factory Method Design Pattern ในการเขียนโค้ดตาม Requirement ที่กําหนดให้โดยเขียนโค้ดด้วยภาษา Python 
+กําหนดให้ใช้ Factory Method Design Pattern ในการเขียนโค้ดตาม Requirement ที่กําหนดให้โดยเขียนโค้ดด้วยภาษา Java
 Requirement ร้านกาแฟ: ต้องการสร้างโปรแกรมรับออเดอร์สำหรับร้านคาเฟ่ โดยมีเมนูต่างๆดังนี้ 
 1. เครื่องดื่ม (Beverages) 
 1.1กาแฟ (Coffee) -เอสเปรสโซ (Espresso) -คาปูชิโน (Cappuccino) -ลาเต้ (Latte) -มอคค่า (Mocha) -อเมริกาโน (Americano) 
@@ -13,4 +13,4 @@ Requirement ร้านกาแฟ: ต้องการสร้างโป
 3.3 สลัด (Salads) -สลัดผัก (Vegetable Salad) -สลัดไก่ (Chicken Salad) 
 เมื่อลูกค้าสั่งรายการต่างๆเข้ามา ทางร้านจะทำตามรายการนั้น 
 #### 
-จากโค้ดที่สร้างเขียน pytest เพื่อทดสอบโค้ดที่กําหนดให้ โดย Statement coverage เป็น 100% และ Branch coverage เป็น 100%
+จากโค้ดที่สร้างเขียน JUnit เพื่อทดสอบโค้ดที่กําหนดให้ โดย Statement coverage เป็น 100% และ Branch coverage เป็น 100%
