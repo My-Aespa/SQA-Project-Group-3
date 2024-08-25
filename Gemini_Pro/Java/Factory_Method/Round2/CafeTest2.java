@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-class CafeTest3 {
+class CafeTest2 {
 
     @Test
     void testCreateMenuItem() {
@@ -21,7 +21,7 @@ class CafeTest3 {
 
     @Test
     void testTakeOrder() {
-        Cafe3 cafe = new Cafe3(new CafeMenuFactory());
+        Cafe2 cafe = new Cafe2(new CafeMenuFactory());
 
         cafe.takeOrder("Espresso");
         cafe.takeOrder("Latte");
