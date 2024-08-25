@@ -1,4 +1,7 @@
 import org.junit.jupiter.api.Test;
+
+import code.Cafe2;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class CafeTest2 {
