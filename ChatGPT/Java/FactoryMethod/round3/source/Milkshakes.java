@@ -1,9 +1,9 @@
 package ChatGPT.Java.FactoryMethod.round3.source;
 
-public class Milkshakes implements Product {
+// Milkshakes.java
+public class Milkshakes extends Beverage {
      @Override
      public String getName() {
          return "Milkshakes";
      }
  }
- 

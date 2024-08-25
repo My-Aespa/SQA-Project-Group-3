@@ -1,13 +1,23 @@
-# code/client.py
+# client.py
 
-def order_beverage(factory):
-    beverage = factory.create_beverage()
-    return beverage.prepare()
+from factory import BeverageFactory, PastryFactory, SnackFactory
 
-def order_pastry(factory):
-    pastry = factory.create_pastry()
-    return pastry.bake()
+def order_item(factory, item_type):
+    item = factory.create_beverage(item_type) if isinstance(factory, BeverageFactory) else \
+           factory.create_pastry(item_type) if isinstance(factory, PastryFactory) else \
+           factory.create_snack(item_type) if isinstance(factory, SnackFactory) else None
+    
+    if item:
+        return item.serve()
+    else:
+        return "Invalid order"
 
-def order_snack(factory):
-    snack = factory.create_snack()
-    return snack.serve()
+# Example usage:
+beverage_factory = BeverageFactory()
+print(order_item(beverage_factory, "Latte"))
+
+pastry_factory = PastryFactory()
+print(order_item(pastry_factory, "Croissant"))
+
+snack_factory = SnackFactory()
+print(order_item(snack_factory, "Spaghetti"))
