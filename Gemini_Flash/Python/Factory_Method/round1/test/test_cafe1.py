@@ -1,77 +1,42 @@
 import pytest
 from your_module import (  # เปลี่ยน 'your_module' เป็นชื่อโมดูลของคุณ
-    Beverage, Coffee, Tea, ColdBeverage,
-    Pastry, Bread, Cake, Cookies,
-    Snack, Sandwiches, Pasta, Salads,
+    MenuItem, Espresso, Latte, Milkshakes, FruitJuices,
+    Croissant, ChocolateCake, ChocolateChipCookies,
+    TunaSandwich, Spaghetti, VegetableSalad,
     CafeOrder
 )
 
-def test_coffee_prepare():
-    coffee = Coffee("Espresso")
-    coffee.prepare()
-    assert "กำลังเตรียม Espresso กาแฟ" in capsys.readouterr().out
-
-def test_tea_prepare():
-    tea = Tea("ชาเขียว")
-    tea.prepare()
-    assert "กำลังเตรียม ชาเขียว ชา" in capsys.readouterr().out
-
-def test_cold_beverage_prepare():
-    cold_beverage = ColdBeverage("สมูทตี้ผลไม้")
-    cold_beverage.prepare()
-    assert "กำลังเตรียม สมูทตี้ผลไม้ เครื่องดื่มเย็น" in capsys.readouterr().out
-
-def test_bread_prepare():
-    bread = Bread("ครัวซองต์")
-    bread.prepare()
-    assert "กำลังเตรียม ครัวซองต์ ขนมปัง" in capsys.readouterr().out
-
-def test_cake_prepare():
-    cake = Cake("เค้กช็อกโกแลต")
-    cake.prepare()
-    assert "กำลังเตรียม เค้กช็อกโกแลต เค้ก" in capsys.readouterr().out
-
-def test_cookies_prepare():
-    cookies = Cookies("คุกกี้ช็อกโกแลตชิป")
-    cookies.prepare()
-    assert "กำลังเตรียม คุกกี้ช็อกโกแลตชิป คุกกี้" in capsys.readouterr().out
-
-def test_sandwiches_prepare():
-    sandwiches = Sandwiches("แซนวิชไก่")
-    sandwiches.prepare()
-    assert "กำลังเตรียม แซนวิชไก่ แซนวิช" in capsys.readouterr().out
-
-def test_pasta_prepare():
-    pasta = Pasta("สปาเก็ตตี้")
-    pasta.prepare()
-    assert "กำลังเตรียม สปาเก็ตตี้ พาสต้า" in capsys.readouterr().out
-
-def test_salads_prepare():
-    salads = Salads("สลัดผัก")
-    salads.prepare()
-    assert "กำลังเตรียม สลัดผัก สลัด" in capsys.readouterr().out
-
-def test_cafe_order_add_item_beverage():
+def test_create_item_beverage():
     order = CafeOrder()
-    order.add_item("Beverage", "Coffee")
-    assert isinstance(order.order[0], Coffee)
+    espresso = order.create_item("Espresso")
+    assert isinstance(espresso, Espresso)
 
-def test_cafe_order_add_item_pastry():
+def test_create_item_pastry():
     order = CafeOrder()
-    order.add_item("Pastry", "Cake")
-    assert isinstance(order.order[0], Cake)
+    chocolate_cake = order.create_item("Chocolate Cake")
+    assert isinstance(chocolate_cake, ChocolateCake)
 
-def test_cafe_order_add_item_snack():
+def test_create_item_snack():
     order = CafeOrder()
-    order.add_item("Snack", "Sandwiches")
-    assert isinstance(order.order[0], Sandwiches)
+    tuna_sandwich = order.create_item("Tuna Sandwich")
+    assert isinstance(tuna_sandwich, TunaSandwich)
 
-def test_cafe_order_prepare_order():
+def test_create_item_invalid():
     order = CafeOrder()
-    order.add_item("Beverage", "Coffee")
-    order.add_item("Pastry", "Cake")
-    order.add_item("Snack", "Sandwiches")
-    order.prepare_order()
-    assert "กำลังเตรียม Coffee กาแฟ" in capsys.readouterr().out
-    assert "กำลังเตรียม Cake เค้ก" in capsys.readouterr().out
-    assert "กำลังเตรียม Sandwiches แซนวิช" in capsys.readouterr().out
+    invalid_item = order.create_item("Invalid")
+    assert invalid_item is None
+
+def test_add_item():
+    order = CafeOrder()
+    order.add_item("Espresso")
+    assert isinstance(order.order[0], Espresso)
+
+def test_serve_order():
+    order = CafeOrder()
+    order.add_item("Espresso")
+    order.add_item("Chocolate Cake")
+    order.add_item("Tuna Sandwich")
+    order.serve_order()
+    assert "เสิร์ฟ เอสเปรสโซ" in capsys.readouterr().out
+    assert "เสิร์ฟ เค้กช็อกโกแลต" in capsys.readouterr().out
+    assert "เสิร์ฟ แซนวิชทูน่า" in capsys.readouterr().out

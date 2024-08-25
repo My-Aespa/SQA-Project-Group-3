@@ -4,104 +4,52 @@ import static org.junit.jupiter.api.Assertions.*;
 class CafeOrderTest {
 
     @Test
-    void testCreateItem_Beverage_Coffee() {
+    void testCreateItem_Beverage() {
         CafeOrder order = new CafeOrder();
-        MenuItem item = order.createItem("Beverage", "Espresso");
-        assertTrue(item instanceof Coffee);
-        assertEquals("Espresso", ((Coffee) item).type);
+        MenuItem item = order.createItem("Espresso");
+        assertTrue(item instanceof Espresso);
     }
 
     @Test
-    void testCreateItem_Beverage_Tea() {
+    void testCreateItem_Pastry() {
         CafeOrder order = new CafeOrder();
-        MenuItem item = order.createItem("Beverage", "Green Tea");
-        assertTrue(item instanceof Tea);
-        assertEquals("Green Tea", ((Tea) item).type);
+        MenuItem item = order.createItem("Chocolate Cake");
+        assertTrue(item instanceof ChocolateCake);
     }
 
     @Test
-    void testCreateItem_Beverage_Cold() {
+    void testCreateItem_Snack() {
         CafeOrder order = new CafeOrder();
-        MenuItem item = order.createItem("Beverage", "Fruit Smoothies");
-        assertTrue(item instanceof ColdBeverage);
-        assertEquals("Fruit Smoothies", ((ColdBeverage) item).type);
-    }
-
-    @Test
-    void testCreateItem_Pastry_Bread() {
-        CafeOrder order = new CafeOrder();
-        MenuItem item = order.createItem("Pastry", "Croissant");
-        assertTrue(item instanceof Bread);
-        assertEquals("Croissant", ((Bread) item).type);
-    }
-
-    @Test
-    void testCreateItem_Pastry_Cake() {
-        CafeOrder order = new CafeOrder();
-        MenuItem item = order.createItem("Pastry", "Chocolate Cake");
-        assertTrue(item instanceof Cake);
-        assertEquals("Chocolate Cake", ((Cake) item).type);
-    }
-
-    @Test
-    void testCreateItem_Pastry_Cookies() {
-        CafeOrder order = new CafeOrder();
-        MenuItem item = order.createItem("Pastry", "Chocolate Chip Cookies");
-        assertTrue(item instanceof Cookies);
-        assertEquals("Chocolate Chip Cookies", ((Cookies) item).type);
-    }
-
-    @Test
-    void testCreateItem_Snack_Sandwiches() {
-        CafeOrder order = new CafeOrder();
-        MenuItem item = order.createItem("Snack", "Chicken Sandwich");
-        assertTrue(item instanceof Sandwiches);
-        assertEquals("Chicken Sandwich", ((Sandwiches) item).type);
-    }
-
-    @Test
-    void testCreateItem_Snack_Pasta() {
-        CafeOrder order = new CafeOrder();
-        MenuItem item = order.createItem("Snack", "Spaghetti");
-        assertTrue(item instanceof Pasta);
-        assertEquals("Spaghetti", ((Pasta) item).type);
-    }
-
-    @Test
-    void testCreateItem_Snack_Salads() {
-        CafeOrder order = new CafeOrder();
-        MenuItem item = order.createItem("Snack", "Vegetable Salad");
-        assertTrue(item instanceof Salads);
-        assertEquals("Vegetable Salad", ((Salads) item).type);
+        MenuItem item = order.createItem("Tuna Sandwich");
+        assertTrue(item instanceof TunaSandwich);
     }
 
     @Test
     void testCreateItem_Invalid() {
         CafeOrder order = new CafeOrder();
-        MenuItem item = order.createItem("Invalid", "Invalid");
+        MenuItem item = order.createItem("Invalid");
         assertNull(item);
     }
 
     @Test
     void testAddItem() {
         CafeOrder order = new CafeOrder();
-        order.addItem("Beverage", "Espresso");
+        order.addItem("Espresso");
         assertEquals(1, order.order.size());
-        assertTrue(order.order.get(0) instanceof Coffee);
-        assertEquals("Espresso", ((Coffee) order.order.get(0)).type);
+        assertTrue(order.order.get(0) instanceof Espresso);
     }
 
     @Test
-    void testPrepareOrder() {
+    void testServeOrder() {
         CafeOrder order = new CafeOrder();
-        order.addItem("Beverage", "Espresso");
-        order.addItem("Pastry", "Chocolate Cake");
-        order.addItem("Snack", "Chicken Sandwich");
-        order.prepareOrder();
+        order.addItem("Espresso");
+        order.addItem("Chocolate Cake");
+        order.addItem("Tuna Sandwich");
+        order.serveOrder();
 
-        String expectedOutput = "กำลังเตรียม Espresso กาแฟ\n" +
-                "กำลังเตรียม Chocolate Cake เค้ก\n" +
-                "กำลังเตรียม Chicken Sandwich แซนวิช\n";
+        String expectedOutput = "เสิร์ฟ เอสเปรสโซ\n" +
+                "เสิร์ฟ เค้กช็อกโกแลต\n" +
+                "เสิร์ฟ แซนวิชทูน่า\n";
         assertEquals(expectedOutput, getOutputFromSystemOut());
     }
 
