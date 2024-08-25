@@ -2,13 +2,13 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class Car_unittest {
+public class Car_unittest1 {
 
-    private Car_code.CarFacade car; 
+    private Car_code1.CarFacade car;
 
     @BeforeEach
     void setUp() {
-        car = new Car_code.CarFacade(); 
+        car = new Car_code1.CarFacade();
     }
 
     @Test
@@ -20,7 +20,7 @@ public class Car_unittest {
 
     @Test
     void testStopCar() {
-        car.startCar(); 
+        car.startCar();
         car.stopCar();
         assertFalse(car.getEngine().isStarted());
         assertFalse(car.getLights().isOn());
@@ -53,7 +53,7 @@ public class Car_unittest {
 
     @Test
     void testStartCarAlreadyStarted() {
-        car.getEngine().start(); 
+        car.getEngine().start();
         car.startCar();
         assertTrue(car.getEngine().isStarted());
     }
