@@ -2,218 +2,130 @@ import java.util.ArrayList;
 import java.util.List;
 
 abstract class MenuItem {
-    public abstract void prepare();
+    public abstract void serve();
 }
 
 // เครื่องดื่ม (Beverages)
-class Coffee extends MenuItem {
-    private String type;
-
-    public Coffee(String type) {
-        this.type = type;
-    }
-
+class Espresso extends MenuItem {
     @Override
-    public void prepare() {
-        System.out.println("กำลังเตรียม " + type + " กาแฟ");
+    public void serve() {
+        System.out.println("เสิร์ฟ เอสเปรสโซ");
     }
 }
 
-class Tea extends MenuItem {
-    private String type;
-
-    public Tea(String type) {
-        this.type = type;
-    }
-
+class Latte extends MenuItem {
     @Override
-    public void prepare() {
-        System.out.println("กำลังเตรียม " + type + " ชา");
+    public void serve() {
+        System.out.println("เสิร์ฟ ลาเต้");
     }
 }
 
-class ColdBeverage extends MenuItem {
-    private String type;
-
-    public ColdBeverage(String type) {
-        this.type = type;
-    }
-
+class Milkshakes extends MenuItem {
     @Override
-    public void prepare() {
-        System.out.println("กำลังเตรียม " + type + " เครื่องดื่มเย็น");
+    public void serve() {
+        System.out.println("เสิร์ฟ นมปั่น");
+    }
+}
+
+class FruitJuices extends MenuItem {
+    @Override
+    public void serve() {
+        System.out.println("เสิร์ฟ น้ำผลไม้");
     }
 }
 
 // ขนม (Pastries)
-class Bread extends MenuItem {
-    private String type;
-
-    public Bread(String type) {
-        this.type = type;
-    }
-
+class Croissant extends MenuItem {
     @Override
-    public void prepare() {
-        System.out.println("กำลังเตรียม " + type + " ขนมปัง");
+    public void serve() {
+        System.out.println("เสิร์ฟ ครัวซองต์");
     }
 }
 
-class Cake extends MenuItem {
-    private String type;
-
-    public Cake(String type) {
-        this.type = type;
-    }
-
+class ChocolateCake extends MenuItem {
     @Override
-    public void prepare() {
-        System.out.println("กำลังเตรียม " + type + " เค้ก");
+    public void serve() {
+        System.out.println("เสิร์ฟ เค้กช็อกโกแลต");
     }
 }
 
-class Cookies extends MenuItem {
-    private String type;
-
-    public Cookies(String type) {
-        this.type = type;
-    }
-
+class ChocolateChipCookies extends MenuItem {
     @Override
-    public void prepare() {
-        System.out.println("กำลังเตรียม " + type + " คุกกี้");
+    public void serve() {
+        System.out.println("เสิร์ฟ คุกกี้ช็อกโกแลตชิป");
     }
 }
 
 // อาหารว่าง (Snacks)
-class Sandwiches extends MenuItem {
-    private String type;
-
-    public Sandwiches(String type) {
-        this.type = type;
-    }
-
+class TunaSandwich extends MenuItem {
     @Override
-    public void prepare() {
-        System.out.println("กำลังเตรียม " + type + " แซนวิช");
+    public void serve() {
+        System.out.println("เสิร์ฟ แซนวิชทูน่า");
     }
 }
 
-class Pasta extends MenuItem {
-    private String type;
-
-    public Pasta(String type) {
-        this.type = type;
-    }
-
+class Spaghetti extends MenuItem {
     @Override
-    public void prepare() {
-        System.out.println("กำลังเตรียม " + type + " พาสต้า");
+    public void serve() {
+        System.out.println("เสิร์ฟ สปาเก็ตตี้");
     }
 }
 
-class Salads extends MenuItem {
-    private String type;
-
-    public Salads(String type) {
-        this.type = type;
-    }
-
+class VegetableSalad extends MenuItem {
     @Override
-    public void prepare() {
-        System.out.println("กำลังเตรียม " + type + " สลัด");
+    public void serve() {
+        System.out.println("เสิร์ฟ สลัดผัก");
     }
 }
 
 class CafeOrder {
     private List<MenuItem> order = new ArrayList<>();
 
-    public MenuItem createItem(String itemType, String itemName) {
-        switch (itemType) {
-            case "Beverage":
-                if (itemName.equals("Espresso")) {
-                    return new Coffee("Espresso");
-                } else if (itemName.equals("Cappuccino")) {
-                    return new Coffee("Cappuccino");
-                } else if (itemName.equals("Latte")) {
-                    return new Coffee("Latte");
-                } else if (itemName.equals("Mocha")) {
-                    return new Coffee("Mocha");
-                } else if (itemName.equals("Americano")) {
-                    return new Coffee("Americano");
-                } else if (itemName.equals("Black Tea")) {
-                    return new Tea("Black Tea");
-                } else if (itemName.equals("Green Tea")) {
-                    return new Tea("Green Tea");
-                } else if (itemName.equals("Oolong Tea")) {
-                    return new Tea("Oolong Tea");
-                } else if (itemName.equals("Lemon Tea")) {
-                    return new Tea("Lemon Tea");
-                } else if (itemName.equals("Fruit Smoothies")) {
-                    return new ColdBeverage("Fruit Smoothies");
-                } else if (itemName.equals("Milkshakes")) {
-                    return new ColdBeverage("Milkshakes");
-                } else if (itemName.equals("Fruit Juices")) {
-                    return new ColdBeverage("Fruit Juices");
-                }
-                break;
-            case "Pastry":
-                if (itemName.equals("Croissant")) {
-                    return new Bread("Croissant");
-                } else if (itemName.equals("Bun")) {
-                    return new Bread("Bun");
-                } else if (itemName.equals("Custard Bread")) {
-                    return new Bread("Custard Bread");
-                } else if (itemName.equals("Chocolate Cake")) {
-                    return new Cake("Chocolate Cake");
-                } else if (itemName.equals("Strawberry Cake")) {
-                    return new Cake("Strawberry Cake");
-                } else if (itemName.equals("Coconut Cake")) {
-                    return new Cake("Coconut Cake");
-                } else if (itemName.equals("Chocolate Chip Cookies")) {
-                    return new Cookies("Chocolate Chip Cookies");
-                } else if (itemName.equals("Oat Cookies")) {
-                    return new Cookies("Oat Cookies");
-                }
-                break;
-            case "Snack":
-                if (itemName.equals("Chicken Sandwich")) {
-                    return new Sandwiches("Chicken Sandwich");
-                } else if (itemName.equals("Tuna Sandwich")) {
-                    return new Sandwiches("Tuna Sandwich");
-                } else if (itemName.equals("Spaghetti")) {
-                    return new Pasta("Spaghetti");
-                } else if (itemName.equals("Penne")) {
-                    return new Pasta("Penne");
-                } else if (itemName.equals("Vegetable Salad")) {
-                    return new Salads("Vegetable Salad");
-                } else if (itemName.equals("Chicken Salad")) {
-                    return new Salads("Chicken Salad");
-                }
-                break;
+    public MenuItem createItem(String itemName) {
+        switch (itemName) {
+            case "Espresso":
+                return new Espresso();
+            case "Latte":
+                return new Latte();
+            case "Milkshakes":
+                return new Milkshakes();
+            case "Fruit Juices":
+                return new FruitJuices();
+            case "Croissant":
+                return new Croissant();
+            case "Chocolate Cake":
+                return new ChocolateCake();
+            case "Chocolate Chip Cookies":
+                return new ChocolateChipCookies();
+            case "Tuna Sandwich":
+                return new TunaSandwich();
+            case "Spaghetti":
+                return new Spaghetti();
+            case "Vegetable Salad":
+                return new VegetableSalad();
         }
         return null; // ถ้ารายการไม่ถูกต้อง
     }
 
-    public void addItem(String itemType, String itemName) {
-        MenuItem item = createItem(itemType, itemName);
+    public void addItem(String itemName) {
+        MenuItem item = createItem(itemName);
         if (item != null) {
             order.add(item);
         }
     }
 
-    public void prepareOrder() {
+    public void serveOrder() {
         for (MenuItem item : order) {
-            item.prepare();
+            item.serve();
         }
     }
 
     public static void main(String[] args) {
         CafeOrder order = new CafeOrder();
-        order.addItem("Beverage", "Espresso");
-        order.addItem("Pastry", "Chocolate Cake");
-        order.addItem("Snack", "Chicken Sandwich");
+        order.addItem("Espresso");
+        order.addItem("Chocolate Cake");
+        order.addItem("Tuna Sandwich");
 
-        order.prepareOrder();
+        order.serveOrder();
     }
 }
