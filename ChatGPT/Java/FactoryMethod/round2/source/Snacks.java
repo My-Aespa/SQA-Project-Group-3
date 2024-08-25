@@ -1,52 +1,25 @@
 package ChatGPT.Java.FactoryMethod.round2.source;
 
 public class Snacks {
-     public class ChickenSandwich implements Product {
+     // Snacks.java
+     public class TunaSandwich implements Product {
           @Override
           public String getName() {
-              return "Chicken Sandwich";
+               return "Tuna Sandwich";
           }
-      }
-      
-      public class TunaSandwich implements Product {
+     }
+
+     public class Spaghetti implements Product {
           @Override
           public String getName() {
-              return "Tuna Sandwich";
+               return "Spaghetti";
           }
-      }
-      
-      // เพิ่มประเภทแซนวิชอื่นๆ ตามที่กำหนด...
-      
-      // พาสต้า
-      public class Spaghetti implements Product {
+     }
+
+     public class VegetableSalad implements Product {
           @Override
           public String getName() {
-              return "Spaghetti";
+               return "Vegetable Salad";
           }
-      }
-      
-      public class Penne implements Product {
-          @Override
-          public String getName() {
-              return "Penne";
-          }
-      }
-      
-      // เพิ่มประเภทพาสต้าอื่นๆ ตามที่กำหนด...
-      
-      // สลัด
-      public class VegetableSalad implements Product {
-          @Override
-          public String getName() {
-              return "Vegetable Salad";
-          }
-      }
-      
-      public class ChickenSalad implements Product {
-          @Override
-          public String getName() {
-              return "Chicken Salad";
-          }
-      }
-      
+     }
 }

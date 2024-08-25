@@ -1,16 +1,16 @@
-package ChatGPT.Java.FactoryMethod.round1.source;
-
 // SnackFactory.java
-public class SnackFactory implements ProductFactory {
+public class SnackFactory extends ProductFactory {
      @Override
      public Product createProduct(String type) {
-         if (type.equals("Chicken Sandwich") || type.equals("Tuna Sandwich")) {
-             return new Sandwich(type);
-         } else if (type.equals("Spaghetti") || type.equals("Penne")) {
-             return new Pasta(type);
-         } else if (type.equals("Vegetable Salad") || type.equals("Chicken Salad")) {
-             return new Salad(type);
+         switch (type) {
+             case "Tuna Sandwich":
+                 return new TunaSandwich();
+             case "Spaghetti":
+                 return new Spaghetti();
+             case "Vegetable Salad":
+                 return new VegetableSalad();
+             default:
+                 throw new IllegalArgumentException("Unknown snack type");
          }
-         return null;
      }
  }
