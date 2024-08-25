@@ -1,4 +1,4 @@
-public class Car_code { 
+public class Car_code {
 
     static class Engine {
         private boolean started;
@@ -129,14 +129,14 @@ public class Car_code {
             return brakes;
         }
     }
-    
+
     public static void main(String[] args) {
-        Car__code.CarFacade car = new Car__code.CarFacade(); // แก้ไขการเรียกใช้คลาส
-        car.startCar(); 
-        car.turnLeft(); 
-        car.applyBrakes(); 
-        car.releaseBrakes(); 
-        car.turnRight(); 
-        car.stopCar();  
+        Car_code.CarFacade car = new Car_code.CarFacade(); // แก้ไขการเรียกใช้คลาส
+        car.startCar();
+        car.turnLeft();
+        car.applyBrakes();
+        car.releaseBrakes();
+        car.turnRight();
+        car.stopCar();
     }
 }
