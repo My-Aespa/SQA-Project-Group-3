@@ -1,9 +1,14 @@
 package ChatGPT.Java.FactoryMethod.round3.source;
 
 // Latte.java
-public class Latte extends Beverage {
-     @Override
-     public String getName() {
-         return "Latte";
-     }
- }
+class Latte extends Coffee {
+    @Override
+    public void prepare() {
+        System.out.println("Preparing Latte.");
+    }
+
+    @Override
+    public void serve() {
+        System.out.println("Serving Latte.");
+    }
+}

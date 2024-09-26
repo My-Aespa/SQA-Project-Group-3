@@ -1,0 +1,43 @@
+classDiagram
+    class Coffee {
+        <<abstract>>
+        +prepare(): String
+        +serve(): String
+    }
+
+    class Americano {
+        +prepare(): String
+        +serve(): String
+    }
+
+    class Latte {
+        +prepare(): String
+        +serve(): String
+    }
+
+    class Cappuccino {
+        +prepare(): String
+        +serve(): String
+    }
+
+    class Espresso {
+        +prepare(): String
+        +serve(): String
+    }
+
+    class Mocha {
+        +prepare(): String
+        +serve(): String
+    }
+
+    class CoffeeFactory {
+        +createCoffee(coffeeType: String): Coffee
+    }
+
+    Coffee <|-- Americano
+    Coffee <|-- Latte
+    Coffee <|-- Cappuccino
+    Coffee <|-- Espresso
+    Coffee <|-- Mocha
+
+    CoffeeFactory --> Coffee : "creates"

@@ -1,0 +1,43 @@
+classDiagram
+    class Coffee {
+        <<abstract>>
+        +prepare() : str
+        +serve() : str
+    }
+
+    class Americano {
+        +prepare() : str
+        +serve() : str
+    }
+
+    class Latte {
+        +prepare() : str
+        +serve() : str
+    }
+
+    class Cappuccino {
+        +prepare() : str
+        +serve() : str
+    }
+
+    class Espresso {
+        +prepare() : str
+        +serve() : str
+    }
+
+    class Mocha {
+        +prepare() : str
+        +serve() : str
+    }
+
+    class CoffeeFactory {
+        +create_coffee(coffee_type : str) : Coffee
+    }
+
+    Coffee <|-- Americano
+    Coffee <|-- Latte
+    Coffee <|-- Cappuccino
+    Coffee <|-- Espresso
+    Coffee <|-- Mocha
+
+    CoffeeFactory --> Coffee : "creates"
