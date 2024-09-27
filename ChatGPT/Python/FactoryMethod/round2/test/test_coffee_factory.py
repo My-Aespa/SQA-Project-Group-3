@@ -1,6 +1,9 @@
 # test_coffee_factory.py
 
 import pytest
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'source')))
 from coffee_factory import Americano, Latte, Cappuccino, Espresso, Mocha, CoffeeFactory
 
 # Testing each concrete coffee class

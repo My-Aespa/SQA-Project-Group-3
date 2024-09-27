@@ -2,7 +2,6 @@ package ChatGPT.Java.Facade.round3.test;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import static org.mockito.Mockito.*;
 
 class CarTest {
