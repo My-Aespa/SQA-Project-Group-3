@@ -1,6 +1,10 @@
 # test_car_facade.py
 import pytest
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'source')))
 from car_facade import CarFacade
+
 
 def test_start_car():
     car = CarFacade()

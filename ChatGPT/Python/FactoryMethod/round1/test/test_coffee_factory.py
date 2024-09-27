@@ -1,5 +1,8 @@
 # test_coffee_factory.py
 import pytest
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'source')))
 from coffee_factory import order_coffee, CoffeeFactory, Americano, Latte, Cappuccino, Espresso, Mocha
 
 def test_order_americano():
