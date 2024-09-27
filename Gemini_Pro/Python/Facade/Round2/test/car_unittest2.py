@@ -1,5 +1,5 @@
 import pytest
-from Car_code1 import CarFacade  # Import CarFacade จากไฟล์เดียวกัน
+from Gemini_Pro.Python.Facade.Round2.source.Car_code2 import CarFacade
 
 # Mock classes
 class MockEngine:
@@ -44,9 +44,9 @@ class MockBrakes:
     def release(self):
         self.applied = False
 
+# Fixture to create mock car with facade
 @pytest.fixture
 def car_facade():
-    # Create mock objects
     engine = MockEngine()
     lights = MockLights()
     steering = MockSteeringWheel()
@@ -59,49 +59,42 @@ def car_facade():
     car.steering = steering
     car.brakes = brakes
 
-    return car, engine, lights, steering, brakes
+    return car
 
+# Test cases for CarFacade functionality
 def test_start_car(car_facade):
-    car, engine, lights, _, _ = car_facade
-    car.start_car()
-    assert engine.started is True
-    assert lights.on is True
+    car_facade.start_car()
+    assert car_facade.engine.started is True
+    assert car_facade.lights.on is True
 
 def test_stop_car(car_facade):
-    car, engine, lights, _, _ = car_facade
-    car.stop_car()
-    assert engine.started is False
-    assert lights.on is False
+    car_facade.stop_car()
+    assert car_facade.engine.started is False
+    assert car_facade.lights.on is False
 
 def test_turn_left(car_facade):
-    car, _, _, steering, _ = car_facade
-    car.turn_left()
-    assert steering.direction == "left"
+    car_facade.turn_left()
+    assert car_facade.steering.direction == "left"
 
 def test_turn_right(car_facade):
-    car, _, _, steering, _ = car_facade
-    car.turn_right()
-    assert steering.direction == "right"
+    car_facade.turn_right()
+    assert car_facade.steering.direction == "right"
 
 def test_apply_brakes(car_facade):
-    car, _, _, _, brakes = car_facade
-    car.apply_brakes()
-    assert brakes.applied is True
+    car_facade.apply_brakes()
+    assert car_facade.brakes.applied is True
 
 def test_release_brakes(car_facade):
-    car, _, _, _, brakes = car_facade
-    car.release_brakes()
-    assert brakes.applied is False
+    car_facade.release_brakes()
+    assert car_facade.brakes.applied is False
 
-# Tests for Branch Coverage:
+# Additional tests for branch coverage
 def test_start_car_engine_already_started(car_facade):
-    car, engine, _, _, _ = car_facade
-    engine.started = True  # ตั้งค่าให้ Engine เริ่มทำงานแล้ว
-    car.start_car()
-    assert engine.started is True
+    car_facade.engine.started = True
+    car_facade.start_car()
+    assert car_facade.engine.started is True  # Engine should remain started
 
 def test_stop_car_engine_already_stopped(car_facade):
-    car, engine, _, _, _ = car_facade
-    engine.started = False  # ตั้งค่าให้ Engine ดับอยู่แล้ว
-    car.stop_car()
-    assert engine.started is False
+    car_facade.engine.started = False
+    car_facade.stop_car()
+    assert car_facade.engine.started is False  # Engine should remain stopped
