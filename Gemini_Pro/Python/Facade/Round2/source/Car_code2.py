@@ -88,3 +88,12 @@ class CarFacade:
     def release_brakes(self):
         print("Releasing brakes...")
         self.brakes.release()
+
+# ใช้งาน CarFacade
+car = CarFacade()# เริ่มต้นการใช้งานรถยนต์
+car.start_car()
+car.turn_left() # เลี้ยวซ้าย
+car.apply_brakes() # เบรก
+car.release_brakes() # ปลดเบรกและเลี้ยวขวา
+car.turn_right()
+car.stop_car() # ดับเครื่องยนต์และปิดไฟ

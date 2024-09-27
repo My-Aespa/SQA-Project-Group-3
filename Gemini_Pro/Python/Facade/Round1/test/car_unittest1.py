@@ -1,6 +1,11 @@
+import sys
+import os
 import pytest
-from Gemini_Pro.Python.Facade.Round1.source.Car_code1 import CarFacade  # Import CarFacade จากไฟล์เดียวกัน
 
+# เพิ่มโฟลเดอร์ Gemini_Pro ลงใน PYTHONPATH
+sys.path.append(os.path.abspath("C:/Users/ok/Documents/GitHub/SQA-Project-Group-3"))
+
+from Gemini_Pro.Python.Facade.Round1.source.Car_code1 import CarFacade
 # Mock classes
 class MockEngine:
     def __init__(self):
