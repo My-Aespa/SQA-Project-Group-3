@@ -1,5 +1,10 @@
+import sys
+import os
 import pytest
-from coffee_maker import CoffeeFactory, Americano, Latte, Cappuccino, Espresso, Mocha
+# เพิ่มโฟลเดอร์ Factory_Method ลงใน PYTHONPATH
+sys.path.append(os.path.abspath("C:/Users/ok/Documents/GitHub/SQA-Project-Group-3/Gemini_Pro/Python/Factory_Method"))
+# นำเข้าจากไฟล์ coffee_maker.py
+from Round3.source.coffee_maker import CoffeeFactory, Americano, Latte, Cappuccino, Espresso, Mocha
 
 @pytest.fixture
 def coffee_factory():
