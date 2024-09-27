@@ -1,7 +1,12 @@
 # test_car_facade.py
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'source')))
 import pytest
 from unittest.mock import MagicMock
 from car_facade import CarFacade
+
+
 
 @pytest.fixture
 def car_facade():

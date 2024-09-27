@@ -1,87 +1,106 @@
+import sys
+import os 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'source')))
 import pytest
-from your_module import Engine, Lights, SteeringWheel, Brakes, Car  # เปลี่ยน 'your_module' เป็นชื่อโมดูลของคุณ
+from Car import Engine, Lights, SteeringWheel, Brakes, Car  # เปลี่ยน 'your_module' เป็นชื่อโมดูลของคุณ
 
 class TestCar:
-    def test_start_engine(self):
+    def test_start_engine(self, capsys):
         car = Car()
         car.start_engine()
-        assert "เครื่องยนต์สตาร์ท" in capsys.readouterr().out
+        captured = capsys.readouterr()
+        assert "เครื่องยนต์สตาร์ท" in captured.out
 
-    def test_stop_engine(self):
+    def test_stop_engine(self, capsys):
         car = Car()
         car.stop_engine()
-        assert "เครื่องยนต์ดับ" in capsys.readouterr().out
+        captured = capsys.readouterr()
+        assert "เครื่องยนต์ดับ" in captured.out
 
-    def test_turn_on_lights(self):
+    def test_turn_on_lights(self, capsys):
         car = Car()
         car.turn_on_lights()
-        assert "ไฟหน้าเปิด" in capsys.readouterr().out
+        captured = capsys.readouterr()
+        assert "ไฟหน้าเปิด" in captured.out
 
-    def test_turn_off_lights(self):
+    def test_turn_off_lights(self, capsys):
         car = Car()
         car.turn_off_lights()
-        assert "ไฟหน้าปิด" in capsys.readouterr().out
+        captured = capsys.readouterr()
+        assert "ไฟหน้าปิด" in captured.out
 
-    def test_turn_left(self):
+    def test_turn_left(self, capsys):
         car = Car()
         car.turn_left()
-        assert "เลี้ยวซ้าย" in capsys.readouterr().out
+        captured = capsys.readouterr()
+        assert "เลี้ยวซ้าย" in captured.out
 
-    def test_turn_right(self):
+    def test_turn_right(self, capsys):
         car = Car()
         car.turn_right()
-        assert "เลี้ยวขวา" in capsys.readouterr().out
+        captured = capsys.readouterr()
+        assert "เลี้ยวขวา" in captured.out
 
-    def test_apply_brakes(self):
+    def test_apply_brakes(self, capsys):
         car = Car()
         car.apply_brakes()
-        assert "เบรก" in capsys.readouterr().out
+        captured = capsys.readouterr()
+        assert "เบรก" in captured.out
 
-    def test_release_brakes(self):
+    def test_release_brakes(self, capsys):
         car = Car()
         car.release_brakes()
-        assert "ปลดเบรก" in capsys.readouterr().out
+        captured = capsys.readouterr()
+        assert "ปลดเบรก" in captured.out
 
 class TestEngine:
-    def test_start(self):
+    def test_start(self, capsys):
         engine = Engine()
         engine.start()
-        assert "เครื่องยนต์สตาร์ท" in capsys.readouterr().out
+        captured = capsys.readouterr()
+        assert "เครื่องยนต์สตาร์ท" in captured.out
 
-    def test_stop(self):
+    def test_stop(self, capsys):
         engine = Engine()
         engine.stop()
-        assert "เครื่องยนต์ดับ" in capsys.readouterr().out
+        captured = capsys.readouterr()
+        assert "เครื่องยนต์ดับ" in captured.out
 
 class TestLights:
-    def test_turn_on(self):
+    def test_turn_on(self, capsys):
         lights = Lights()
         lights.turn_on()
-        assert "ไฟหน้าเปิด" in capsys.readouterr().out
+        captured = capsys.readouterr()
+        assert "ไฟหน้าเปิด" in captured.out
 
-    def test_turn_off(self):
+    def test_turn_off(self, capsys):
         lights = Lights()
         lights.turn_off()
-        assert "ไฟหน้าปิด" in capsys.readouterr().out
+        captured = capsys.readouterr()
+        assert "ไฟหน้าปิด" in captured.out
 
 class TestSteeringWheel:
-    def test_turn_left(self):
+    def test_turn_left(self, capsys):
         steering_wheel = SteeringWheel()
         steering_wheel.turn_left()
-        assert "เลี้ยวซ้าย" in capsys.readouterr().out
+        captured = capsys.readouterr()
+        assert "เลี้ยวซ้าย" in captured.out
 
-    def test_turn_right(self):
+    def test_turn_right(self, capsys):
         steering_wheel = SteeringWheel()
         steering_wheel.turn_right()
-        assert "เลี้ยวขวา" in capsys.readouterr().out
+        captured = capsys.readouterr()
+        assert "เลี้ยวขวา" in captured.out
 
 class TestBrakes:
-    def test_apply(self):
+    def test_apply(self, capsys):
         brakes = Brakes()
         brakes.apply()
-        assert "เบรก" in capsys.readouterr().out
+        captured = capsys.readouterr()
+        assert "เบรก" in captured.out
 
-    def test_release(self):
+    def test_release(self, capsys):
         brakes = Brakes()
         brakes.release()
-        assert "ปลดเบรก" in capsys.readouterr().out
+        captured = capsys.readouterr()
+        assert "ปลดเบรก" in captured.out

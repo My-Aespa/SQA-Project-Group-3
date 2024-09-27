@@ -1,3 +1,8 @@
+from engine import Engine
+from lights import Lights
+from steering_wheel import SteeringWheel
+from brakes import Brakes
+
 class CarFacade:
     def __init__(self):
         self.engine = Engine()
