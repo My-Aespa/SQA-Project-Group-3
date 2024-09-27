@@ -1,5 +1,5 @@
 import pytest
-from Gemini_Pro.Python.Facade.Round1.Car_code1 import CarFacade
+from Car_code1 import CarFacade  # Import CarFacade จากไฟล์เดียวกัน
 
 # Mock classes
 class MockEngine:
@@ -93,18 +93,15 @@ def test_release_brakes(car_facade):
     car.release_brakes()
     assert brakes.applied is False
 
-
-# เพิ่มเติม Tests for Branch Coverage:
+# Tests for Branch Coverage:
 def test_start_car_engine_already_started(car_facade):
     car, engine, _, _, _ = car_facade
     engine.started = True  # ตั้งค่าให้ Engine เริ่มทำงานแล้ว
     car.start_car()
-    # ตรวจสอบว่าไม่มีการเรียก engine.start() อีกครั้ง (เนื่องจาก Engine ทำงานอยู่แล้ว)
-    assert engine.started is True 
+    assert engine.started is True
 
 def test_stop_car_engine_already_stopped(car_facade):
     car, engine, _, _, _ = car_facade
     engine.started = False  # ตั้งค่าให้ Engine ดับอยู่แล้ว
     car.stop_car()
-    # ตรวจสอบว่าไม่มีการเรียก engine.stop() อีกครั้ง (เนื่องจาก Engine ดับอยู่แล้ว)
     assert engine.started is False
