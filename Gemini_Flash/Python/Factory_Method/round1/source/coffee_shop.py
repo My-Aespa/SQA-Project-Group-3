@@ -64,3 +64,6 @@ def order_coffee(coffee_type):
     coffee = CoffeeFactory.create_coffee(coffee_type)
     coffee.prepare()
     coffee.serve()
+
+if __name__ == "__main__":
+    order_coffee("Latte")
