@@ -1,16 +1,17 @@
+package test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class Car_unittest1 {
-
-    private Car_code1.CarFacade car;
+class Car_unittest {
+    private Car_code.CarFacade car;  // เปลี่ยนชื่อคลาส Car เป็น Car_code
 
     @BeforeEach
     void setUp() {
-        car = new Car_code1.CarFacade();
+        car = new Car_code.CarFacade();  // เปลี่ยนชื่อคลาส Car เป็น Car_code
     }
 
+    // ... (JUnit Test methods เหมือนเดิม)
     @Test
     void testStartCar() {
         car.startCar();
@@ -20,7 +21,8 @@ public class Car_unittest1 {
 
     @Test
     void testStopCar() {
-        car.startCar();
+        car.getEngine().start(); // Start the car first
+        car.getLights().turnOn();
         car.stopCar();
         assertFalse(car.getEngine().isStarted());
         assertFalse(car.getLights().isOn());
@@ -29,13 +31,13 @@ public class Car_unittest1 {
     @Test
     void testTurnLeft() {
         car.turnLeft();
-        assertEquals("left", car.getSteering().getDirection());
+        assertEquals("left", car.getSteeringWheel().getDirection());
     }
 
     @Test
     void testTurnRight() {
         car.turnRight();
-        assertEquals("right", car.getSteering().getDirection());
+        assertEquals("right", car.getSteeringWheel().getDirection());
     }
 
     @Test
@@ -46,20 +48,22 @@ public class Car_unittest1 {
 
     @Test
     void testReleaseBrakes() {
-        car.applyBrakes();
+        car.getBrakes().apply(); // Apply brakes first
         car.releaseBrakes();
         assertFalse(car.getBrakes().isApplied());
     }
 
+    // Branch Coverage Tests
     @Test
     void testStartCarAlreadyStarted() {
-        car.getEngine().start();
+        car.getEngine().start(); // Start engine manually
         car.startCar();
-        assertTrue(car.getEngine().isStarted());
+        assertTrue(car.getEngine().isStarted()); 
     }
 
     @Test
     void testStopCarAlreadyStopped() {
+        car.getEngine().stop(); // Stop engine manually
         car.stopCar();
         assertFalse(car.getEngine().isStarted());
     }

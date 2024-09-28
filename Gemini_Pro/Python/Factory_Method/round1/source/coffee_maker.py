@@ -85,3 +85,7 @@ class CoffeeFactory:
             return Mocha()
         else:
             raise ValueError("Invalid coffee type.")
+# coffee_maker.py
+print("Coffee maker program is running...")
+
+# โค้ดอื่น ๆ ที่เกี่ยวข้องกับ coffee maker

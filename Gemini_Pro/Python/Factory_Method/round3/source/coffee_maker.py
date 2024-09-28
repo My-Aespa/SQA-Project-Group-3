@@ -82,3 +82,7 @@ factory.register_coffee('Latte', Latte)
 factory.register_coffee('Cappuccino', Cappuccino)
 factory.register_coffee('Espresso', Espresso)
 factory.register_coffee('Mocha', Mocha)
+# สร้างกาแฟชนิดต่าง ๆ
+coffee = factory.create_coffee('Latte')
+print(coffee.prepare())
+print(coffee.serve())

@@ -1,3 +1,5 @@
+package source;
+
 public class Car_code {
 
     static class Engine {
@@ -73,10 +75,10 @@ public class Car_code {
     }
 
     public static class CarFacade {
-        private final Engine engine = new Engine();
-        private final Lights lights = new Lights();
-        private final SteeringWheel steering = new SteeringWheel();
-        private final Brakes brakes = new Brakes();
+        private Engine engine = new Engine();
+        private Lights lights = new Lights();
+        private SteeringWheel steering = new SteeringWheel();
+        private Brakes brakes = new Brakes();
 
         public void startCar() {
             System.out.println("Starting the car...");
@@ -112,7 +114,6 @@ public class Car_code {
             brakes.release();
         }
 
-        // Getters for testing
         public Engine getEngine() {
             return engine;
         }
@@ -121,7 +122,7 @@ public class Car_code {
             return lights;
         }
 
-        public SteeringWheel getSteeringWheel() {
+        public SteeringWheel getSteering() {
             return steering;
         }
 
@@ -131,7 +132,7 @@ public class Car_code {
     }
 
     public static void main(String[] args) {
-        Car_code.CarFacade car = new Car_code.CarFacade(); // แก้ไขการเรียกใช้คลาส
+        Car_code.CarFacade car = new Car_code.CarFacade();
         car.startCar();
         car.turnLeft();
         car.applyBrakes();
