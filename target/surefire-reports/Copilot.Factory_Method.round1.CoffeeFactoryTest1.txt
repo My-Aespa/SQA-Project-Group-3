@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: Copilot.Factory_Method.round1.CoffeeFactoryTest1
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.051 s -- in Copilot.Factory_Method.round1.CoffeeFactoryTest1
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.056 s -- in Copilot.Factory_Method.round1.CoffeeFactoryTest1
