@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: Copilot.Facade.round1.CarFacadeTest1
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.359 s -- in Copilot.Facade.round1.CarFacadeTest1
