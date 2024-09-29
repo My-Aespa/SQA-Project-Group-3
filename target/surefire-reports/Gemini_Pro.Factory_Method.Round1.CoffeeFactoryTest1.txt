@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: Gemini_Pro.Factory_Method.Round1.CoffeeFactoryTest1
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in Gemini_Pro.Factory_Method.Round1.CoffeeFactoryTest1
