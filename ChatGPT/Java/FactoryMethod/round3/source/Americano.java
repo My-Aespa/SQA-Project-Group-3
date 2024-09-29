@@ -1,4 +1,4 @@
-package ChatGPT.Factory_Method.Round3;
+package ChatGPT.Java.FactoryMethod.round3.source;
 
 // Americano.java
 class Americano extends Coffee {
