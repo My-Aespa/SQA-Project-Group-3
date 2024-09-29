@@ -1,8 +1,14 @@
 package Copilot.Facade.round3;
 public class Main {
     public static void main(String[] args) {
-        // Instantiate CarFacade
-        CarFacade car = new CarFacade();
+        // Instantiate the required components
+        Engine engine = new Engine();
+        Lights lights = new Lights();
+        SteeringWheel steeringWheel = new SteeringWheel();
+        Brakes brakes = new Brakes();
+
+        // Instantiate CarFacade with the components
+        CarFacade car = new CarFacade(engine, lights, steeringWheel, brakes);
 
         // Demonstrate functionality with print statements
         System.out.println("Starting the engine...");
