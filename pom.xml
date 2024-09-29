@@ -36,6 +36,14 @@
             <version>3.12.4</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- JaCoCo Dependency (optional) -->
+        <dependency>
+            <groupId>org.jacoco</groupId>
+            <artifactId>org.jacoco.agent</artifactId>
+            <version>0.8.7</version> <!-- ตรวจสอบเวอร์ชันล่าสุด -->
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -49,6 +57,26 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+            <!-- JaCoCo Plugin -->
+ <plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <version>0.8.7</version>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>prepare-agent</goal>
+                    </goals>
+                </execution>
+                <execution>
+                    <id>generate-coverage-report</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>report</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
         </plugins>
     </build>
 </project>

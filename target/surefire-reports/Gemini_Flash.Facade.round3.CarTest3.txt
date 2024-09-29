@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: Gemini_Flash.Facade.round3.CarTest3
--------------------------------------------------------------------------------
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.049 s -- in Gemini_Flash.Facade.round3.CarTest3
