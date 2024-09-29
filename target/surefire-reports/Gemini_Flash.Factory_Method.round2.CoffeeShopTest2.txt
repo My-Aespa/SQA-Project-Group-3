@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: Gemini_Flash.Factory_Method.round2.CoffeeShopTest2
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s - in Gemini_Flash.Factory_Method.round2.CoffeeShopTest2
