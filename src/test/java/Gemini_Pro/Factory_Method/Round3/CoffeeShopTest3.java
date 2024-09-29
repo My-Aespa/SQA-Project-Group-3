@@ -52,6 +52,6 @@ public class CoffeeShopTest3 {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             coffeeShop.orderCoffee("InvalidCoffee");
         });
-        assertEquals("Invalid coffee type: invalidcoffee", exception.getMessage());
+        assertEquals("Invalid coffee type: invalidcoffee", exception.getMessage()); // คาดหวังเป็นตัวพิมพ์เล็กทั้งหมด
     }
 }
