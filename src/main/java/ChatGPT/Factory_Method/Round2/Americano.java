@@ -1,7 +1,6 @@
-package ChatGPT.Factory_Method.Round3;
+package ChatGPT.Factory_Method.Round2;
 
-// Americano.java
-class Americano extends Coffee {
+public class Americano implements Coffee {
     @Override
     public void prepare() {
         System.out.println("Preparing Americano.");
@@ -12,3 +11,4 @@ class Americano extends Coffee {
         System.out.println("Serving Americano.");
     }
 }
+
