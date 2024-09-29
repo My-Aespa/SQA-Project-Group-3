@@ -1,0 +1,6 @@
+projectKey=sqa-project
+serverUrl=http://localhost:9000
+serverVersion=10.6.0.92116
+dashboardUrl=http://localhost:9000/dashboard?id=sqa-project
+ceTaskId=a06bd272-9c50-48eb-a5d0-3e7ec7e2de45
+ceTaskUrl=http://localhost:9000/api/ce/task?id=a06bd272-9c50-48eb-a5d0-3e7ec7e2de45
