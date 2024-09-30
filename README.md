@@ -2,8 +2,11 @@
 CP353201 Software Quality Assurance (1/2567)
 เรื่อง Facade pattern & Factory Method pattern
 สมาชิกกลุ่มที่ 3 
+
 นางสาวสุวรินทร์ โพธิ์ตาก รหัสนักศึกษา 653380028-0 sec.1
+
 นายธนธรณ์ จูหลาย รหัสนักศึกษา 653380131-7 sec.1
+
 นางสาวนภสร สุบงกช  รหัสนักศึกษา 653380133-3 sec.1
 
 link Report รายงาน : https://drive.google.com/file/d/1pIVTGqClAjtwwEmapc_DOCsVGm6wDxy5/view?usp=drive_link
