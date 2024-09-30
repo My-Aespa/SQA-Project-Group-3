@@ -13,4 +13,4 @@ link Report รายงาน : https://drive.google.com/file/d/1pIVTGqClAjtwwE
 
 link สำหรับดูสไลด์นำเสนอ : https://www.canva.com/design/DAGSIxm04VA/JeSFvwQhCG-vxumkxGaUEw/view?utm_content=DAGSIxm04VA&utm_campaign=designshare&utm_medium=link&utm_source=editor
 
-link drive all file : https://drive.google.com/file/d/1pIVTGqClAjtwwEmapc_DOCsVGm6wDxy5/view?usp=drive_link
+link drive all file : https://drive.google.com/drive/folders/1-zIZy_92dgOVDxzyzR1tdz_U3DoYQOQf?usp=sharing
